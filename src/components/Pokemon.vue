@@ -1,14 +1,15 @@
 <template>
   <div class="Pokemon">
-    {{ pokemon.name }}
-    {{ pokemon.name }}
+    <router-link :to="{name: 'Active', params: {name: pokemonProps.name}}">
+      {{ pokemon.name }}
+    </router-link>
   </div>
 </template>
 
 <script>
 // import { AppState } from '../AppState'
 import { computed } from 'vue'
-// import pokemonService from '../services/PokemonService'
+import { pokemonService } from '../services/PokemonService'
 
 export default {
   name: 'Pokemon',
@@ -18,7 +19,10 @@ export default {
   },
   setup(props) {
     return {
-      pokemon: computed(() => props.pokemonProps)
+      pokemon: computed(() => props.pokemonProps),
+      getActivePokemon(name) {
+        pokemonService.getActivePokemon(name)
+      }
     }
   },
   components: {}

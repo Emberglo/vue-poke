@@ -3,6 +3,10 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 // @ts-ignore
 import Profile from '../pages/Profile.vue'
+// @ts-ignore
+import Active from '../pages/ActivePokemonPage.vue'
+// @ts-ignore
+import Pokedex from '../pages/Pokedex.vue'
 import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
@@ -16,6 +20,16 @@ const routes = [
     name: 'Profile',
     component: Profile,
     beforeEnter: Auth0Provider.authGuard
+  },
+  {
+    path: '/active/:name',
+    name: 'Active',
+    component: Active
+  },
+  {
+    path: '/pokedex',
+    name: 'Pokedex',
+    component: Pokedex
   }
 ]
 

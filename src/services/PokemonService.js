@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { api } from './AxiosService'
 import { AppState } from '../AppState'
 
@@ -5,10 +6,27 @@ class PokemonService {
   async getPokemon() {
     try {
       const res = await api.get('')
-      console.log(res)
       AppState.pokemon = res.data.results
     } catch (error) {
       // eslint-disable-next-line no-console
+      console.error(error)
+    }
+  }
+
+  async getActivePokemon(name) {
+    try {
+      const res = await api.get('' + name)
+      console.log(res)
+      AppState.activePokemon = res.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  addPokemon() {
+    try {
+      AppState.pokedex.push(AppState.activePokemon)
+    } catch (error) {
       console.error(error)
     }
   }
