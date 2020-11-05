@@ -9,6 +9,8 @@
 import Navbar from '@/components/navbar'
 import { computed } from 'vue'
 import { AppState } from './AppState'
+// import Pokemon from './components/Pokemon'
+
 export default {
   name: 'App',
   setup() {
