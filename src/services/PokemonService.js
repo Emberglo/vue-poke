@@ -25,7 +25,15 @@ class PokemonService {
 
   addPokemon(activePokemon) {
     try {
-      AppState.pokedex += activePokemon
+      AppState.pokedex.push(AppState.activePokemon)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  getPokedex() {
+    try {
+
     } catch (error) {
       console.error(error)
     }

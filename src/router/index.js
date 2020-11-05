@@ -6,7 +6,7 @@ import Profile from '../pages/Profile.vue'
 // @ts-ignore
 import Active from '../pages/ActivePokemonPage.vue'
 // @ts-ignore
-// import Pokedex from '../pages/Pokedex.vue'
+import Pokedex from '../pages/Pokedex.vue'
 import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
@@ -25,12 +25,12 @@ const routes = [
     path: '/active/:name',
     name: 'Active',
     component: Active
+  },
+  {
+    path: '/pokedex',
+    name: 'Pokedex',
+    component: Pokedex
   }
-  // {
-  //   path: '/pokedex',
-  //   name: 'Pokedex',
-  //   component: Pokedex
-  // }
 ]
 
 const router = createRouter({

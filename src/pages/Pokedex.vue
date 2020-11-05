@@ -1,16 +1,27 @@
 <template>
   <div class="Pokedex">
-    Pokedex
+    <h1>Pokemon</h1>
+    <Pokemon v-for="pokemon in pokedex" :pokemon-props="pokemon" :key="pokemon.name" />
   </div>
 </template>
 
 <script>
+import { computed } from 'vue'
+// import { pokemonService } from '../services/PokemonService'
+import { AppState } from '../AppState'
+import Pokemon from '../components/Pokemon'
+
 export default {
-  name: 'Pokedex',
+  name: 'Home',
+  components: { Pokemon },
   setup() {
-    return {}
-  },
-  components: {}
+    // onMounted(() => {
+    //   pokemonService.getPokedex()
+    // })
+    return {
+      pokemon: computed(() => AppState.pokedex)
+    }
+  }
 }
 </script>
 
