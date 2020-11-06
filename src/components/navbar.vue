@@ -29,6 +29,9 @@
           <router-link :to="{ name: 'Home' }" class="nav-link">
             Home
           </router-link>
+          <router-link :to="{ name: 'Pokedex' }" class="nav-link">
+            Pokedex
+          </router-link>
         </li>
       </ul>
       <span class="navbar-text">
@@ -59,6 +62,11 @@
             @click="state.dropOpen = false"
           >
             <router-link :to="{ name: 'Profile' }">
+              <div class="list-group-item list-group-item-action hoverable">
+                Profile
+              </div>
+            </router-link>
+            <router-link :to="{ name: 'Pokedex' }">
               <div class="list-group-item list-group-item-action hoverable">
                 Profile
               </div>

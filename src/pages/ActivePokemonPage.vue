@@ -16,7 +16,7 @@ import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { AppState } from '../AppState'
 import { pokemonService } from '../services/PokemonService'
-import { router } from '../router'
+// import { router } from '../router'
 
 export default {
   name: 'Active',
@@ -30,7 +30,7 @@ export default {
       activePokemon: computed(() => AppState.activePokemon),
       addPokemon(activePokemon) {
         pokemonService.addPokemon(activePokemon)
-        router.push({ name: 'Pokedex' })
+        // router.push({ name: 'Pokedex' })
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="Pokedex">
     <h1>Pokemon</h1>
-    <Pokemon v-for="pokemon in pokedex" :pokemon-props="pokemon" :key="pokemon.name" />
+    <Pokemon v-for="pokemon in pokemon" :pokemon-props="pokemon" :key="pokemon.name" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ import { AppState } from '../AppState'
 import Pokemon from '../components/Pokemon'
 
 export default {
-  name: 'Home',
+  name: 'Pokedex',
   components: { Pokemon },
   setup() {
     // onMounted(() => {
